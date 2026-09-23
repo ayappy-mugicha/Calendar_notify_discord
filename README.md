@@ -13,15 +13,28 @@ Gmail と Calendar は別ファイルに分かれており、個別実行もま�
 | `src/GmailNotify.gs` | 重要メール取得と通知 |
 | `src/CalendarNotify.gs` | 今日の予定取得と通知 |
 | `src/Main.gs` | `runGmailNotify` / `runCalendarNotify` / `runAll` / 日次トリガー |
-| `appsscript.json` | `Asia/Tokyo` と OAuth スコープ |
+| `src/appsscript.json` | `Asia/Tokyo` と OAuth スコープ |
 
 ## セットアップ
 
-### 1. Apps Script プロジェクトを作る
+### 1. clasp で push（推奨）
+
+Apps Script プロジェクト（作成済み）:  
+https://script.google.com/d/1mpxiQucjznYIfl2SFwfWGzCuY0ALzj3dkVJrS1hlLG_gM1IvPc-APZef/edit
+
+更新時はリポジトリ直下で:
+
+```bash
+clasp push
+```
+
+初回のみ [Apps Script API](https://script.google.com/home/usersettings) を ON にし、`clasp login` してから `clasp create` / `clasp push` する。`clasp create` は `src/appsscript.json` の `timeZone` を上書きすることがあるので、push 前に `Asia/Tokyo` であることを確認する。
+
+### 1b. 手動で作る場合
 
 1. [script.google.com](https://script.google.com/) で新規プロジェクトを作成
-2. 上記 `.gs` の内容を同名ファイルとして貼り付け（または [clasp](https://github.com/google/clasp) で `src` を push）
-3. `appsscript.json` の内容をプロジェクト設定のマニフェストに反映
+2. `src/` 内の `.gs` を同名ファイルとして貼り付け
+3. `src/appsscript.json` をプロジェクト設定のマニフェストに反映
 
 ### 2. Discord Webhook
 

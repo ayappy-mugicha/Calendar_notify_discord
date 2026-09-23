@@ -7,7 +7,8 @@
  */
 function notifyTodayCalendar() {
   var today = getTodayInTimezone();
-  var events = CalendarApp.getDefaultCalendar().getEventsForDay(today);
+  var tomorrow = new Date(today.getTime() + 24 * 60 * 60 * 1000);
+  var events = CalendarApp.getDefaultCalendar().getEvents(today, tomorrow);
   var fields = [];
 
   for (var i = 0; i < events.length; i++) {
