@@ -54,7 +54,14 @@ clasp push
 
 ### 4. 毎日 6:00 に自動実行
 
-エディタで `createDailyTrigger` を一度実行します（タイムゾーンは `Asia/Tokyo`）。
+エディタで、送り先に対応する関数を一度実行します（タイムゾーンは `Asia/Tokyo`）。既存の朝トリガーは置き換わり、毎日 6:00 に1本だけ残ります。
+
+- `createDailyTriggerDiscord` … Discord（`DISCORD_WEBHOOK_URL`）
+- `createDailyTriggerGoogleChat` … Google Chat（`GOOGLE_CHAT_WEBHOOK_URL`）
+- `createDailyTriggerGmail` … 自分宛メール（未設定ならスクリプト所有者。上書きは `NOTIFY_EMAIL`）
+- `createDailyTrigger` … Discord 固定（`createDailyTriggerDiscord` と同じ）
+
+`runAllDiscord` / `runAllGoogleChat` / `runAllGmail` はトリガーから呼ばれます。手動でその関数を実行しても、同じ送信先で今すぐ送れます。
 
 ## 切替方法
 

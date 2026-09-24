@@ -31,11 +31,11 @@ function notifyTodayCalendar() {
   var desc = dayLabel + ' の予定: ' + fields.length + ' 件';
 
   if (fields.length === 0) {
-    sendDiscordEmbedChunks('今日の予定', desc + '\n予定なし', [], 0x57f287);
+    deliverReport_('今日の予定', desc + '\n予定なし', [], 0x57f287);
     return { count: 0 };
   }
 
-  sendDiscordEmbedChunks('今日の予定', desc, fields, 0x57f287);
+  deliverReport_('今日の予定', desc, fields, 0x57f287);
   return { count: fields.length };
 }
 

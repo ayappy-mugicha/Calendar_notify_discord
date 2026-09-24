@@ -11,9 +11,14 @@ var Config = {
   /** runAll で Calendar 通知を送るか */
   ENABLE_CALENDAR: true,
   WEBHOOK_PROPERTY_KEY: 'DISCORD_WEBHOOK_URL',
+  CHAT_WEBHOOK_PROPERTY_KEY: 'GOOGLE_CHAT_WEBHOOK_URL',
+  NOTIFY_EMAIL_PROPERTY_KEY: 'NOTIFY_EMAIL',
   GMAIL_WINDOW_START_HOUR: 20,
   GMAIL_WINDOW_END_HOUR: 6,
-  DISCORD_USERNAME: 'Calendar Notify'
+  DISCORD_USERNAME: 'Calendar Notify',
+  CHAT_TEXT_LIMIT: 4000,
+  /** runAll の送信先。トリガー用関数が実行前に上書きする */
+  DESTINATION: 'discord'
 };
 
 /**

@@ -64,7 +64,7 @@ function notifyImportantGmail() {
     ' 件';
 
   if (fields.length === 0) {
-    sendDiscordEmbedChunks(
+    deliverReport_(
       '重要メール（夜間）',
       desc + '\n該当なし',
       [],
@@ -73,7 +73,7 @@ function notifyImportantGmail() {
     return { count: 0 };
   }
 
-  sendDiscordEmbedChunks('重要メール（夜間）', desc, fields, 0xed4245);
+  deliverReport_('重要メール（夜間）', desc, fields, 0xed4245);
   return { count: fields.length };
 }
 
